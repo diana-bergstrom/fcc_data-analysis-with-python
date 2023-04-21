@@ -23,9 +23,9 @@ Skills used:
 * raise Value Error ()
 
 # Challenge 2
-## Demographic Data Analyzer
+## [Demographic Data Analyzer](https://www.freecodecamp.org/learn/data-analysis-with-python/data-analysis-with-python-projects/demographic-data-analyzer)
 
-Task: 
+Task: use Pandas to analyze demographic data provided from the 1994 Census database
 
 Skills used:
 
