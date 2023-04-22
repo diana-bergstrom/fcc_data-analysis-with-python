@@ -29,4 +29,20 @@ Task: use Pandas to analyze demographic data provided from the 1994 Census datab
 
 Skills used:
 
+* read_csv
+* value_counts()
+* round()
+* isin
+* len()
+* idxmax()
+
+# Challenge 3
+## [Medical Data Visualizer](https://www.freecodecamp.org/learn/data-analysis-with-python/data-analysis-with-python-projects/medical-data-visualizer)
+
+Task: use matplotlib, seaborn, and pandas to visualize and make calculations from medical examination data
+
+Skills used:
+
 * 
+
+
