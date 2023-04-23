@@ -103,7 +103,7 @@ def draw_heat_map():
     # Generate a mask for the upper triangle
     
     # np.triu masks upper triangle of an array
-    # np.triu would mask the lower triangle of an array
+    # np.tril would mask the lower triangle of an array
     mask = np.triu(corr)
 
     # Set up the matplotlib figure
