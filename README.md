@@ -43,6 +43,25 @@ Task: use matplotlib, seaborn, and pandas to visualize and make calculations fro
 
 Skills used:
 
+* .apply(lambda)
+* draw_cat_plot
+* pd.melt()
+* .count()
+* .groupby()
+* sns.catplot()
+* savefig()
+* quantile()
+* draw_heat_map()
+* .corr()
+* .triu() and .tril()
+* .subplots()
+* sns.heatmap()
+
+# Challenge 4
+## [Page View Time Series Visualizer](https://www.freecodecamp.org/learn/data-analysis-with-python/data-analysis-with-python-projects/page-view-time-series-visualizer)
+
+Task: use pandas, matplotlib, and seaborn to visualize time series data using a line chart, bar chart, and box plots
+
+Skills used:
+
 * 
-
-
