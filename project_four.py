@@ -51,7 +51,7 @@ def draw_line_plot():
   return fig
 
 def draw_bar_plot():
-# Copy and modify data for monthly bar plot
+  # Copy and modify data for monthly bar plot
   df_bar =  df.copy()
   df['year'] = df.index.year
   df['month'] = df.index.month_name()
@@ -60,7 +60,7 @@ def draw_bar_plot():
   # create a hierarchical column index for year and month
   df_bar = df_bar.unstack()
   
-   # Draw bar plot
+  # Draw bar plot
   fig = df_bar.plot.bar(legend=True, figsize=(15,10)).figure
   plt.xlabel("Years")
   plt.ylabel("Average Page Views")
@@ -73,7 +73,7 @@ def draw_bar_plot():
   return fig
 
 def draw_box_plot():
-# Prepare data for box plots (this part is done!)
+  # Prepare data for box plots (this part is done!)
   df_box = df.copy()
   df_box.reset_index(inplace=True)
   df_box['year'] = [d.year for d in df_box.date]
