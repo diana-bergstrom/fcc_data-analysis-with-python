@@ -54,7 +54,7 @@ def draw_bar_plot():
     # Copy and modify data for monthly bar plot
     df_bar = df.copy()
     df['year'] = df.index.year
-    df['month'] = df.index.month_name()
+    df['month'] = df.index.month
     # group data frame by year and month, calculate mean of each column
     df_bar = df.groupby(['year', 'month'])['value'].mean()
     # create a hierarchical column index for year and month
