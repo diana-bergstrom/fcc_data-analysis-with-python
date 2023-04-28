@@ -36,7 +36,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Import data
-df = pd.read_csv('/kaggle/input/d/dianabergstrom/medical-examination/medical_examination.csv')
+df = pd.read_csv('medical_examination.csv')
 
 # Add 'overweight' column
 # height was given in cm so divide by 100 to get m
