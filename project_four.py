@@ -31,15 +31,13 @@ df = pd.read_csv('fcc-forum-pageviews.csv', index_col = 'date', parse_dates = ['
 # Clean data
 df = df[(df['value'] >= df['value'].quantile(0.025)) &
 (df['value'] <= df['value'].quantile(0.975))]
-# could also try:
-# low = df['value'].quantile(0.025) 
-# high = df['value'].quantile(0.975)
-# df_filtered = df[(df['value'] >= low) & (df['value'] <= high)]
 
 def draw_line_plot():
   # Draw line plot
+  
   # create line plot
   fig, ax = plt.subplots(figsize=(15,10))
+  
   # first value is x axis (date because date was set to index earlier), second value is y axis
   ax.plot(df.index, df['value'], color='r')
 
@@ -57,7 +55,9 @@ def draw_bar_plot():
   df_bar =  df.copy()
   df['year'] = df.index.year
   df['month'] = df.index.month_name()
+  # group data frame by year and month, calculate mean of each column
   df_bar = df.groupby(['year', 'month'])['value'].mean()
+  # create a hierarchical column index for year and month
   df_bar = df_bar.unstack()
   
    # Draw bar plot
@@ -80,6 +80,8 @@ def draw_box_plot():
   df_box['month'] = [d.strftime('%b') for d in df_box.date]
 
   # Draw box plots (using Seaborn)
+  
+  # create column for month number and put in ascending order
   df_box["month_num"] = df_box["date"].dt.month
   df_box = df_box.sort_values("month_num")
 
