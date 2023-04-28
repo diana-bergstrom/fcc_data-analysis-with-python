@@ -43,18 +43,18 @@ Task: use matplotlib, seaborn, and pandas to visualize and make calculations fro
 
 Skills used:
 
-* .apply(lambda)
+* apply(lambda)
 * draw_cat_plot
 * pd.melt()
-* .count()
-* .groupby()
+* count()
+* groupby()
 * sns.catplot()
 * savefig()
 * quantile()
 * draw_heat_map()
-* .corr()
-* .triu() and .tril()
-* .subplots()
+* corr()
+* triu() and .tril()
+* subplots()
 * sns.heatmap()
 
 # Challenge 4
@@ -64,4 +64,22 @@ Task: use pandas, matplotlib, and seaborn to visualize time series data using a 
 
 Skills used:
 
-* 
+* unstack()
+* df.copy()
+* set_title()
+* set_xlabel()
+* set_ylabel()
+* plot.bar() 
+* reset_index()
+* sort_values()
+* plt.subplots()
+* sns.boxplot()
+
+# Challenge 5
+## [Sea Level Predictor](https://www.freecodecamp.org/learn/data-analysis-with-python/data-analysis-with-python-projects/sea-level-predictor)
+
+Task: use pandas and matplotlib to analyze a dataset of the global average sea level change to predict the sea level change through year 2050
+
+Skills used:
+
+*
