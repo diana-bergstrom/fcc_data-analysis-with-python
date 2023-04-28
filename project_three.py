@@ -36,52 +36,47 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Import data
-df = pd.read_csv('medical_examination.csv')
+df = pd.read_csv('/kaggle/input/d/dianabergstrom/medical-examination/medical_examination.csv')
 
 # Add 'overweight' column
-
 # height was given in cm so divide by 100 to get m
 # .apply(lambda x: y if x parameter else z); lambda takes value x and compares it to a specified value, returns a value if true otherwise returns the second value
 df['overweight'] = (df['weight'] / (df['height'] / 100) ** 2).apply(lambda x: 0 if x < 25 else 1)
 
 # Normalize data by making 0 always good and 1 always bad
 # If the value of 'cholesterol' or 'gluc' is 1, make the value 0; if the value is more than 1, make the value 1.
-
 df['cholesterol'] = df['cholesterol'].apply(lambda x: 0 if x == 1 else 1)
 df['gluc'] = df['gluc'].apply(lambda x: 0 if x == 1 else 1)
 
 # Draw Categorical Plot
-  def draw_cat_plot():
-  # Create DataFrame for cat plot using `pd.melt` using just the values from 'cholesterol', 'gluc', 'smoke', 'alco', 'active', and 'overweight'.
-  
-  # pd.melt transforms wide data into long data
-  # id_vars keeps column as is (specifically cardio column in this example
-  # value_vars transforms cholesterol, gluc, smoke, alco, active, and overweight rows into columns
-  df_cat = pd.melt(df, id_vars = ['cardio'], value_vars = ['cholesterol', 'gluc', 'smoke', 'alco', 'active', 'overweight'])
+def draw_cat_plot():
+    # Create DataFrame for cat plot using `pd.melt` using just the values from 'cholesterol', 'gluc', 'smoke', 'alco', 'active', and 'overweight'.
+    # pd.melt transforms wide data into long data
+    # id_vars keeps column as is (specifically cardio column in this example)
+    # value_vars transforms cholesterol, gluc, smoke, alco, active, and overweight rows into columns
+    df_cat = pd.melt(df, id_vars=['cardio'], value_vars=['cholesterol', 'gluc', 'smoke', 'alco', 'active', 'overweight'])
 
-  # Group and reformat the data to split it by 'cardio'.
-  # Show the counts of each feature.
-  # You will have to rename one of the columns for the catplot to work correctly.
-  
-  # add new column named "total" to the df
-  # Sst value of 1 for each row so that the number of occurrences of each combination of categorical variables can be counted using groupby() and count()
-  df_cat["total"] = 1
-  df_cat = df_cat.groupby(['cardio', 'variable', 'value'], as_index=False).count()
+    # Group and reformat the data to split it by 'cardio'.
+    # Show the counts of each feature.
+    # You will have to rename one of the columns for the catplot to work correctly.
+    # add new column named "total" to the df
+    # Set value of 1 for each row so that the number of occurrences of each combination of categorical variables can be counted using groupby() and count()
+    df_cat["total"] = 1
+    df_cat = df_cat.groupby(['cardio', 'variable', 'value'], as_index=False).count()
 
-  # Draw the catplot with 'sns.catplot()'
-  
-  # col='cardio' separates the plots into two columns based on whether a patient has a cardiovascular disease or not (0 or 1)
-  # kind specifies bar plot
-  # hue colors the bar based on the value of the 'value' column
-  catplot = sns.catplot(data=df_cat, x='variable', y='value', col='cardio', kind='bar', hue='value')
+    # Draw the catplot with 'sns.catplot()'
+    # col='cardio' separates the plots into two columns based on whether a patient has a cardiovascular disease or not (0 or 1)
+    # kind specifies bar plot
+    # hue colors the bar based on the value of the 'value' column
+    catplot = sns.catplot(data=df_cat, x='variable', y='total', col='cardio', kind='bar', hue='value', order=['active', 'alco', 'cholesterol', 'gluc', 'overweight', 'smoke',])
 
-  # Get the figure for the output
-  fig = catplot.fig
-  
-  # Do not modify the next two lines
-  fig.savefig('catplot.png')
-  return fig
-    
+    # Get the figure for the output
+    fig = catplot.fig
+
+    # Do not modify the next two lines
+    fig.savefig('catplot.png')
+    return fig
+
 # Draw Heat Map
 def draw_heat_map():
     # Clean the data using specifications from directions (height and weight should be between 2.5th and 97.5th percentiles)
@@ -133,4 +128,3 @@ def draw_heat_map():
     # Do not modify the next two lines
     fig.savefig('heatmap.png')
     return fig
-
