@@ -57,6 +57,10 @@ Skills used:
 * subplots()
 * sns.heatmap()
 
+![catplot](https://github.com/diana-bergstrom/fcc_data-analysis-with-python/assets/114450141/ed750928-af9f-4fa8-9a12-52a70e8ae940)
+
+![heatmap](https://github.com/diana-bergstrom/fcc_data-analysis-with-python/assets/114450141/4196e178-61e2-4369-8d5d-c3dbdcb9452f)
+
 # Challenge 4
 ## [Page View Time Series Visualizer](https://www.freecodecamp.org/learn/data-analysis-with-python/data-analysis-with-python-projects/page-view-time-series-visualizer)
 
@@ -75,6 +79,12 @@ Skills used:
 * plt.subplots()
 * sns.boxplot()
 
+![line_plot](https://github.com/diana-bergstrom/fcc_data-analysis-with-python/assets/114450141/1ab47664-8109-4224-bbed-a93ead2aea01)
+
+![Bar Plot](https://github.com/diana-bergstrom/fcc_data-analysis-with-python/assets/114450141/9eeb7f0b-00e0-41f7-b1bb-a53c088e6b6c)
+
+![Box Plot](https://github.com/diana-bergstrom/fcc_data-analysis-with-python/assets/114450141/37738120-59f2-42d0-9588-74c22882f33f)
+
 # Challenge 5
 ## [Sea Level Predictor](https://www.freecodecamp.org/learn/data-analysis-with-python/data-analysis-with-python-projects/sea-level-predictor)
 
@@ -84,3 +94,5 @@ Skills used:
 * plt.scatter()
 * linregress()
 * range()
+
+![Rise in Sea Level](https://github.com/diana-bergstrom/fcc_data-analysis-with-python/assets/114450141/16148f88-1941-40d3-9faa-359f7e3da405)
